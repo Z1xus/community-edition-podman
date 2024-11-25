@@ -14,7 +14,8 @@
 
 ### Prerequisites
 
-- **[Docker](https://docs.docker.com/engine/install/)** and **[Docker Compose](https://docs.docker.com/compose/install/)** must be installed on your machine.
+- **[Podman](https://podman.io/getting-started/installation)** and **[Podman Compose](https://github.com/containers/podman-compose#installation)** must be installed on your machine.
+  - Alternatively, **[Docker](https://docs.docker.com/engine/install/)** and **[Docker Compose](https://docs.docker.com/compose/install/)** can be used
 - **CPU** must support **SSE 4.2** or **NEON** instruction set or higher (required by ClickHouse).
 - At least **2 GB of RAM** is recommended for running ClickHouse and Plausible without fear of OOMs.
 
@@ -23,7 +24,7 @@
 1. Clone this repository:
 
     ```console
-    $ git clone -b v2.1.4 --single-branch https://github.com/plausible/community-edition plausible-ce
+    $ git clone -b v2.1.4 --single-branch https://github.com/Z1xus/community-edition-podman plausible-ce
     Cloning into 'plausible-ce'...
     remote: Enumerating objects: 13, done.
     remote: Counting objects: 100% (10/10), done.
@@ -70,10 +71,10 @@
 
     Setting `HTTP_PORT=80` and `HTTPS_PORT=443` enables automatic Let's Encrypt TLS certificate issuance. You might want to choose different values if, for example, you plan to run Plausible behind [a reverse proxy.](https://github.com/plausible/community-edition/wiki/reverse-proxy)
 
-1. Start the services with Docker Compose:
+1. Start the services with Podman Compose:
 
     ```console
-    $ docker compose up -d
+    $ podman-compose up -d
     ```
 
 1. Visit your instance at `$BASE_URL` and create the first user.
